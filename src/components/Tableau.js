@@ -6,7 +6,7 @@ const TableauEmbed = ({ src, title }) => {
     <div className="tableau-container">
       <iframe
         src={src}
-        width="100%"
+        className="w-full"
         height="600px"
         allowFullScreen={true}
         title={title}

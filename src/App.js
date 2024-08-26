@@ -1,11 +1,12 @@
+import FRED from "./components/FRED";
 import TableauEmbed from "./components/Tableau";
 
 const Dashboard = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto py-6">
       <h1 className="text-3xl font-bold mb-6">Real Estate Metrics Dashboard</h1>
       <h2 className="text-2xl font-semibold mb-4">Housing Market Data</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6">
         <div className="bg-white p-6 rounded-lg shadow-md">
           <TableauEmbed
             src="https://public.tableau.com/shared/DK9QW5P7Z?:display_count=n&:origin=viz_share_link&:embed=y"
@@ -39,27 +40,33 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <h2 className="text-2xl font-semibold mb-4">Economic Data</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow-md overflow-auto">
+      <h2 className="text-2xl font-semibold mb-4 mt-6">Economic Data</h2>
+      <div className="grid grid-cols-1 gap-6">
+        <div className="bg-white p-6 rounded-lg shadow-md">
           <iframe
-            src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1sUkR&width=670&height=475"
+            src="http://mndne.ws/4GT5MZ"
             scrolling="no"
             frameborder="0"
-            style={{ overflow: "hidden", width: "670px", height: "525px" }}
+            className="overflow-hidden w-full"
+            style={{ height: "850px" }}
             allowTransparency="true"
             loading="lazy"
             title="10 year"
           ></iframe>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold">Mortgage Rates</h2>
+        <div className="bg-white p-6 rounded-lg shadow-md overflow-auto">
+          <FRED
+            src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1sUkR&width=100%&height=475"
+            title="spread"
+            height="525px"
+          />
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold">10-Year Yield</h2>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold">GDP Growth</h2>
+          <FRED
+            src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1t7lm&width=100%&height=475"
+            title="spread"
+            height="525px"
+          />
         </div>
       </div>
     </div>

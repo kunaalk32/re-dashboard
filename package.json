@@ -2,6 +2,7 @@
   "name": "data-tracker",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kunaalk32.github.io/re-dashboard/",
   "dependencies": {
     "axios": "^1.7.4",
     "chart.js": "^4.4.3",
